@@ -68,6 +68,7 @@ bool is_adjacent(const string &word1, const string &word2)
 
 vector<string> generate_word_ladder(const string &begin_word, const string &end_word, const set<string> &word_list)
 {
+    /*
     int word1size = begin_word.size();
     int word2size = end_word.size();
     
@@ -76,6 +77,7 @@ vector<string> generate_word_ladder(const string &begin_word, const string &end_
         error(begin_word, end_word, "words arent adjacent size difference is bigger than one!");
         return{};
     }
+    */
     
     if(begin_word == end_word )
     {
