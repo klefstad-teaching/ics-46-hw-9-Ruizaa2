@@ -40,7 +40,9 @@ bool is_adjacent(const string &word1, const string &word2)
             if(word1.at(i) != word2.at(i))
                 ++count;
         }
-        return count == 1;
+        if (count <= 1)
+            return true;
+        return  false;
     }
 
     if( abs(len1-len2) == 1) // This checks if the lengths are longer than 1

@@ -22,7 +22,7 @@ int main() {
 }
 */
 
-/*
+
 
 //Adjacent tests
 int main() {
@@ -50,9 +50,9 @@ int main() {
 
     return 0;
 }
-*/
 
 
+/*
 
 int main() {
     set<string> words;
@@ -78,3 +78,5 @@ int main() {
 
     return 0;
 }
+
+*/
