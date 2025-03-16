@@ -71,6 +71,7 @@ int main() {
         cout << "No word ladder found!" << endl;
     } else {
         print_word_ladder(ladder);
+        //verify_word_ladder();
         //cout << "Word Ladder: ";
         //for (const string& word : ladder) {
         //    cout << word << " ";
