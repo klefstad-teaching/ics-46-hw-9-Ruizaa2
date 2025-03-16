@@ -129,7 +129,7 @@ bool edit_distance_within(const std::string& str1, const std::string& str2, int 
             return true;
         return  false;
     }
-    
+
     if( abs(len1-len2) == 1) // This checks if the lengths are longer than 1
     {
         int i = 0, j = 0;
@@ -162,7 +162,7 @@ void print_word_ladder(const vector<string>& ladder)
     else cout << "No word ladder found.";
     cout << endl;
 }
-
+/*
 #define my_assert(e) {cout << #e << ((e) ? " passed": " failed") << endl;}
 
 void verify_word_ladder() {
@@ -184,3 +184,4 @@ void verify_word_ladder() {
     my_assert(generate_word_ladder("car", "cheat", word_list).size() == 4);
 
 }
+*/

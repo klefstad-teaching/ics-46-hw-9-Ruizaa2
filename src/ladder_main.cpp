@@ -54,8 +54,31 @@ int main() {
 
 /*
 */
+#define my_assert(e) {cout << #e << ((e) ? " passed": " failed") << endl;}
+
+void verify_word_ladder() {
+
+    set<string> word_list;
+
+    load_words(word_list, "src/words.txt");
+
+    my_assert(generate_word_ladder("cat", "dog", word_list).size() == 4);
+
+    my_assert(generate_word_ladder("marty", "curls", word_list).size() == 6);
+
+    my_assert(generate_word_ladder("code", "data", word_list).size() == 6);
+
+    my_assert(generate_word_ladder("work", "play", word_list).size() == 6);
+
+    my_assert(generate_word_ladder("sleep", "awake", word_list).size() == 8);
+
+    my_assert(generate_word_ladder("car", "cheat", word_list).size() == 4);
+
+}
 
 int main() {
+
+    /*
     set<string> words;
     load_words(words, "src/words.txt");
 
@@ -70,8 +93,8 @@ int main() {
     if (ladder.empty()) {
         cout << "No word ladder found!" << endl;
     } else {
-        print_word_ladder(ladder);
-        //verify_word_ladder();
+        //print_word_ladder(ladder);
+        verify_word_ladder();
         //cout << "Word Ladder: ";
         //for (const string& word : ladder) {
         //    cout << word << " ";
@@ -79,5 +102,7 @@ int main() {
         //cout << endl;
     }
 
+    */
+    verify_word_ladder();
     return 0;
 }
