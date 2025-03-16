@@ -112,7 +112,44 @@ vector<string> generate_word_ladder(const string &begin_word, const string &end_
     return {};
 }
 
-bool edit_distance_within(const std::string& str1, const std::string& str2, int d){(void)str1;(void)str2; (void)d; return false;};
+bool edit_distance_within(const std::string& str1, const std::string& str2, int d)
+{
+    int len1 = str1.size();
+    int len2 = str2.size();
+
+    if(len1 == len2)
+    {
+        int count = 0;
+        for(int i = 0; i < len1; ++i)
+        {
+            if(str1.at(i) != str2.at(i))
+                ++count;
+        }
+        if (count <= d)
+            return true;
+        return  false;
+    }
+    
+    if( abs(len1-len2) == 1) // This checks if the lengths are longer than 1
+    {
+        int i = 0, j = 0;
+        bool changeMade = false;
+
+        while ( i < len1 && j < len2)
+        {
+            if(str1[i] != str2[j])
+            {
+                if(len1 > len2) i++;
+                else j++;
+                if(changeMade) return false;
+                changeMade = true;
+            }
+            else i++,j++;
+        }
+        return true;
+    }
+    return false;
+};
 
 
 void print_word_ladder(const vector<string>& ladder)
