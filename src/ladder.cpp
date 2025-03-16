@@ -116,7 +116,17 @@ vector<string> generate_word_ladder(const string &begin_word, const string &end_
 bool edit_distance_within(const std::string& str1, const std::string& str2, int d){(void)str1;(void)str2; (void)d; return false;};
 
 
-void print_word_ladder(const vector<string>& ladder){(void)ladder;};
+void print_word_ladder(const vector<string>& ladder)
+{
+    if(!ladder.empty())
+    {
+        cout << "Word ladder found: ";
+        for(int i = 0; i < ladder.size(); i++)
+            cout << ladder[i] << " ";
+    }
+    else cout << "No word ladder found.";
+    cout << endl;
+}
 
 
 void verify_word_ladder(){};
