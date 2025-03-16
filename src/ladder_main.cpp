@@ -22,7 +22,7 @@ int main() {
 }
 */
 
-
+/*
 
 //Adjacent tests
 int main() {
@@ -50,9 +50,10 @@ int main() {
 
     return 0;
 }
-
+*/
 
 /*
+*/
 
 int main() {
     set<string> words;
@@ -69,14 +70,13 @@ int main() {
     if (ladder.empty()) {
         cout << "No word ladder found!" << endl;
     } else {
-        cout << "Word Ladder: ";
-        for (const string& word : ladder) {
-            cout << word << " ";
-        }
-        cout << endl;
+        print_word_ladder(ladder);
+        //cout << "Word Ladder: ";
+        //for (const string& word : ladder) {
+        //    cout << word << " ";
+        //}
+        //cout << endl;
     }
 
     return 0;
 }
-
-*/
