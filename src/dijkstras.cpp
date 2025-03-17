@@ -46,12 +46,12 @@ vector<int> dijkstra_shortest_path(const Graph& G, int source, vector<int>& prev
 vector<int> extract_shortest_path(const vector<int>& /*distances*/, const vector<int>& previous, int destination)
 {
     vector<int> path;
-    for(int i = destination; i != -1; i = previous[i])
+    for(int i = destination; i != -1; i = previous[i]) // we going backwards
     {
         path.push_back(i);
     }
 
-    for (size_t i = 0, j = path.size() - 1; i < j; i++, j--)
+    for (size_t i = 0, j = path.size() - 1; i < j; i++, j--) //trying to swap values
     {
         swap(path[i], path[j]);
     }
@@ -67,12 +67,13 @@ void print_path(const vector<int>& v, int total)
 {
     if(v.empty())
     {
+        cerr << "Path Not FOund";
         return;
     }
 
     for(size_t i = 0; i < v.size(); ++i)
     {
         cout << v[i] << " ";
+        cout << "\nTotal cost is " << total << endl;
     }
-    cout << "\nTotal cost is " << total << endl;
 }
