@@ -65,7 +65,7 @@ vector<int> extract_shortest_path(const vector<int>& /*distances*/, const vector
 
 void print_path(const vector<int>& v, int total)
 {
-    if(v.empty())
+    if(total == INF)
     {
         cerr << "Path Not FOund";
         return;
