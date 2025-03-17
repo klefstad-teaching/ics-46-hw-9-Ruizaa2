@@ -5,6 +5,8 @@
 vector<int> dijkstra_shortest_path(const Graph& G, int source, vector<int>& previous)
 {
     int n = G.numVertices;
+    if(n == 0) return{};
+    
     vector<int> distance(n,INF);      //makes a vector of distance to every vertex from source node
     previous.assign(n,-1);       // keeps track of the path
     vector<bool> visited(n,false);     //makes sure we dont revisit
@@ -28,7 +30,7 @@ vector<int> dijkstra_shortest_path(const Graph& G, int source, vector<int>& prev
             int currNeighbor = e.dst;
             int neighborWeight = e.weight;
 
-            if(!visited[currNeighbor] && distance[current] + neighborWeight < distance[currNeighbor])
+            if(!visited[currNeighbor] && distance[current] + neighborWeight < distance[currNeighbor])   // checks if the current distance for the vertex is larger
             {
                 distance[currNeighbor] = distance[current] + neighborWeight;
                 previous[currNeighbor] = current;
