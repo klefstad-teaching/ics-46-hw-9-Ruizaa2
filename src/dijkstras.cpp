@@ -1,4 +1,5 @@
 #include "dijkstras.h"
+#include <cstddef>
 #include <queue>
 #include <vector>
 
@@ -6,7 +7,7 @@ vector<int> dijkstra_shortest_path(const Graph& G, int source, vector<int>& prev
 {
     int n = G.numVertices;
     if(n == 0) return{};
-    
+
     vector<int> distance(n,INF);      //makes a vector of distance to every vertex from source node
     previous.assign(n,-1);       // keeps track of the path
     vector<bool> visited(n,false);     //makes sure we dont revisit
@@ -42,5 +43,36 @@ vector<int> dijkstra_shortest_path(const Graph& G, int source, vector<int>& prev
 }
 
 
-vector<int> extract_shortest_path(const vector<int>& /*distances*/, const vector<int>& previous, int destination){return{};};
-void print_path(const vector<int>& v, int total){};
+vector<int> extract_shortest_path(const vector<int>& /*distances*/, const vector<int>& previous, int destination)
+{
+    vector<int> path;
+    for(int i = destination; i != -1; i = previous[i])
+    {
+        path.push_back(i);
+    }
+
+    for (size_t i = 0, j = path.size() - 1; i < j; i++, j--)
+    {
+        swap(path[i], path[j]);
+    }
+
+    if(path.size() == 1 && path[0] != destination)
+    {
+        return{};
+    }
+    return path;
+}
+
+void print_path(const vector<int>& v, int total)
+{
+    if(v.empty())
+    {
+        return;
+    }
+
+    for(size_t i = 0; i < v.size(); ++i)
+    {
+        cout << v[i] << " ";
+    }
+    cout << "\nTotal cost is " << total << endl;
+}
