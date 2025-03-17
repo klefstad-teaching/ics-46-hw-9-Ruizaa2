@@ -8,6 +8,13 @@
 using namespace std;
 
 constexpr int INF = numeric_limits<int>::max();
+/*
+struct Node {
+    int vertex;
+    int weight;
+    Node(int v, int w) :vertex(v),weight(w){}
+};
+*/
 
 struct Edge {
     int src=0;
@@ -47,6 +54,6 @@ inline void file_to_graph(const string& filename, Graph& G) {
     in.close();
 }
 
-vector<int> dijkstra_shortest_path(const Graph& G, int source, vector<int>& previous){return{};};
-vector<int> extract_shortest_path(const vector<int>& /*distances*/, const vector<int>& previous, int destination){return{};};
-void print_path(const vector<int>& v, int total){};
+vector<int> dijkstra_shortest_path(const Graph& G, int source, vector<int>& previous);
+vector<int> extract_shortest_path(const vector<int>& /*distances*/, const vector<int>& previous, int destination);
+void print_path(const vector<int>& v, int total);
