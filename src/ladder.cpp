@@ -103,7 +103,7 @@ vector<string> generate_word_ladder(const string &begin_word, const string &end_
     return {};
 }
 
-bool edit_distance_within(const std::string& str1, const std::string& str2, int d)
+bool edit_distance_within(const std::string& str1, const std::string& str2, int d)   //apparently this should of been a helper function for is adjacent?
 {
     int len1 = str1.size();
     int len2 = str2.size();

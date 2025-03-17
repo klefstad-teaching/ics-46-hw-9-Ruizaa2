@@ -32,9 +32,9 @@ int main() {
 }
 */
 int main() {
-    string filename = "src/small.txt";  // Hardcoded file name
+    string filename = "src/small.txt";  
     Graph G;
-    int source;  // Hardcoded source vertex (or read from file if needed)
+    int source;
     cin >> source;
     try {
         file_to_graph(filename, G);
@@ -46,13 +46,11 @@ int main() {
 
     vector<int> previous;
     vector<int> distances = dijkstra_shortest_path(G, source, previous);
-
-    // Print shortest distances from the source vertex
     cout << "Shortest distances from vertex " << source << ":\n";
     for (int i = 0; i < G.numVertices; i++) {
         cout << distances[i] << " ";
     }
-    cout << "\nTotal cost is " << distances[source] << "\n";  // Autograder format
+    cout << "\nTotal cost is " << distances[source] << "\n"; 
 
     return 0;
 }
